@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="top.qingrang.dao.IRolePermissionDao">
+    <select id="selectListRolePermissionByRID" resultType="RolePermission">
+        select * from role_permission WHERE rid = #{rid};
+    </select>
+
+    <delete id="deleteByPrimaryKey">
+        DELETE FROM role_permission WHERE id = #{id}
+    </delete>
+
+    <insert id="insertRolePermission">
+        INSERT into role_permission(rid,pid) VALUES (#{rid},#{pid})
+    </insert>
+</mapper>

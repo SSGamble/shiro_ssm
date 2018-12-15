@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="top.qingrang.dao.IRoleDao">
+    <select id="selectByPrimaryKey" resultType="Role">
+        select * FROM role WHERE id = #{id}
+    </select>
+
+    <select id="selectRoleList" resultType="Role">
+        select * FROM role ORDER BY id desc
+    </select>
+
+    <insert id="insertRole">
+        INSERT into role(name,desc_) VALUES (#{name},#{desc_})
+    </insert>
+
+    <update id="updateRole">
+        UPDATE role set name=#{name},desc_=#{desc_} WHERE id = #{id}
+    </update>
+
+    <delete id="deleteRoleByID">
+        DELETE FROM role WHERE id = #{id}
+    </delete>
+</mapper>
